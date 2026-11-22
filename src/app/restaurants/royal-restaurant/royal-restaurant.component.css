@@ -29,7 +29,6 @@
   border-radius: 50%;
   background: #765538;
   color: white;
-  font-family: Georgia, serif;
   font-size: 1.75rem;
 }
 
@@ -69,8 +68,6 @@ p {
 
 .qr-url {
   margin: 0.5rem 0 0;
-  color: #786e64;
-  font-size: 0.85rem;
   overflow-wrap: anywhere;
 }
 
@@ -109,11 +106,6 @@ p {
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 1rem;
-}
-
-.section-heading > span {
-  color: #786e64;
-  font-size: 0.9rem;
 }
 
 .menu-grid {
