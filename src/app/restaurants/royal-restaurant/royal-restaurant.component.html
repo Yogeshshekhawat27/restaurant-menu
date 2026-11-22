@@ -1,0 +1,58 @@
+<main class="menu-page">
+  <a class="back-link" routerLink="/">All restaurants</a>
+
+  <header class="restaurant-header">
+    <div class="brand-mark">R</div>
+    <div>
+      <p class="eyebrow">WELCOME TO</p>
+      <h1>{{ restaurantName }}</h1>
+    </div>
+  </header>
+
+  <section class="qr-section" *ngIf="qrCodeImage">
+    <div>
+      <p class="eyebrow">SCAN TO OPEN MENU</p>
+      <h2>Table Menu</h2>
+      <p class="qr-url">{{ menuUrl }}</p>
+    </div>
+    <a [href]="qrCodeImage" download="royal-restaurant-qr.png" aria-label="Download QR code">
+      <img [src]="qrCodeImage" alt="QR code for the restaurant menu" />
+    </a>
+  </section>
+
+  <nav class="category-nav" aria-label="Menu categories">
+    <button
+      *ngFor="let category of categories"
+      type="button"
+      [class.active]="activeCategory === category"
+      (click)="selectCategory(category)">
+      {{ category }}
+    </button>
+  </nav>
+
+  <section class="menu-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">OUR MENU</p>
+        <h2>{{ activeCategory }}</h2>
+      </div>
+      <span>{{ filteredItems.length }} items</span>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card" *ngFor="let item of filteredItems">
+        <div class="item-image" [attr.aria-label]="item.name">{{ item.emoji }}</div>
+        <div class="item-details">
+          <div class="item-title-row">
+            <h3>{{ item.name }}</h3>
+            <span class="item-price">{{ item.price | currency:'INR':'symbol':'1.0-0' }}</span>
+          </div>
+          <p>{{ item.description }}</p>
+          <span class="dietary" [class.non-veg]="item.type === 'Non-Veg'">
+            {{ item.type }}
+          </span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>

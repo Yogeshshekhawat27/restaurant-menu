@@ -1,0 +1,7 @@
+<main class="home">
+  <p class="eyebrow">CHOOSE A RESTAURANT</p>
+  <h1>Menus</h1>
+  <a class="restaurant-link" *ngFor="let restaurant of restaurants" [routerLink]="restaurant.path">
+    {{ restaurant.name }}
+  </a>
+</main>

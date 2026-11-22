@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.home {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: #94704f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0 0 2rem;
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+.restaurant-link {
+  display: inline-block;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e5d9c9;
+  border-radius: 0.75rem;
+  background: #fffdf9;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.restaurant-link:hover {
+  border-color: #94704f;
+}
